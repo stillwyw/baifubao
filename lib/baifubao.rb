@@ -1,3 +1,6 @@
+require 'rubygems'
+require 'digest'
+require 'ostruct'
 require "baifubao/version"
 require "baifubao/signature"
 require "baifubao/util"
@@ -13,9 +16,9 @@ module Baifubao
   
   def self.direct_pay_url params={}
     url = "https://www.baifubao.com/api/0/pay/0/direct"
-    params[:service_no] = 1
+    params[:service_code] = 1
 
-    Util.require_params([:order_create_time, :order_no, :goods_name, :total_amount, :currency, :return_url, :pay_type, ], params.keys)
+    Util.require_params([:order_create_time, :order_no, :goods_name, :total_amount, :currency, :return_url, :pay_type ], params.keys)
 
     UrlGenerator.new(url,params).url
   end

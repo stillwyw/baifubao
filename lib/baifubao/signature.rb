@@ -4,6 +4,7 @@ module Baifubao
       key = Baifubao::Config.key
       str = hash.sort.map{|m| m.join("=")}.join("&")
       str += "&key=#{key}"
+      # puts "stuf before singing here ..... #{str}"
       Digest::MD5.hexdigest(str)      
     end
     
