@@ -1,5 +1,6 @@
 require "baifubao/version"
 require "baifubao/signature"
+require "baifubao/util"
 require "baifubao/url_generator"
 
 module Baifubao
