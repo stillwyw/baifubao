@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{A gem for Baidu.com payment gateway. Web interface only.}
   spec.description   = %q{A gem for Baidu.com payment gateway. Web interface only.}
-  spec.homepage      = "www.github.com"
+  spec.homepage      = "http://www.github.com/stillwyw/baifubao"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
