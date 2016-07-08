@@ -7,13 +7,21 @@ module Baifubao
       # puts "stuf before singing here ..... #{str}"
       Digest::MD5.hexdigest(str)      
     end
-    
+
     def self.check_sign(hash)
       key = Baifubao::Config.key
       signature = hash[:sign] || hash['sign']
       hash.delete(:sign)
       hash.delete('sign')
-      raise Baifubao::Error.new, "Signature does not match! The signature from wechat is #{signature} the one you got is #{sign(hash)}" unless signature.upcase == sign(hash).upcase
+      if signature.upcase == sign(hash).upcase
+        return true
+      else
+        return false
+      end
+    end
+    
+    def self.check_sign!(hash)      
+      raise "Signature does not match! The signature from baidu is #{signature} the one you got is #{sign(hash)}" unless self.check_sign(hash)
     end
   end
 end
